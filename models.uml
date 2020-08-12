@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>models</OriginalElement>
+  <nodes>
+    <node x="665.0" y="1441.0">models.LoanRecordsTest</node>
+    <node x="0.0" y="1441.0">models.BookTest</node>
+    <node x="0.0" y="602.5">models.Liberian</node>
+    <node x="325.0" y="1441.0">models.OrderTest</node>
+    <node x="1044.0" y="0.0">models.BookCard</node>
+    <node x="927.0" y="1441.0">models.LiberianTest</node>
+    <node x="286.25" y="0.0">models.Person</node>
+    <node x="494.0" y="545.0">models.User</node>
+    <node x="1120.0" y="855.0">models.UserTest</node>
+    <node x="764.0" y="855.0">models.BookCardTest</node>
+    <node x="425.0" y="855.0">models.LoanRecords</node>
+    <node x="0.0" y="855.0">models.Book</node>
+    <node x="1460.0" y="855.0">models.Order</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="models.Liberian" target="models.Person">
+      <point x="0.0" y="-75.0" />
+      <point x="237.0" y="520.0" />
+      <point x="389.0" y="520.0" />
+      <point x="-102.75" y="247.5" />
+    </edge>
+    <edge source="models.User" target="models.Person">
+      <point x="0.0" y="-132.5" />
+      <point x="746.5" y="520.0" />
+      <point x="594.5" y="520.0" />
+      <point x="102.75" y="247.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="605.5" y="718.0" />
+  <SelectedNodes>
+    <node>models.LoanRecordsTest</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
