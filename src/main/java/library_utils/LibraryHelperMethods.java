@@ -23,9 +23,15 @@ public class LibraryHelperMethods {
      * @return
      */
     public static BookCard createBookCard(String title, String author, String bookCode, String category, String description){
-        BookCard newBookCard = new BookCard( title,  author,  bookCode,  category,  description);
-        MockDataBase.listOfBookCard.put(bookCode, newBookCard);
-        return newBookCard;
+        try{
+            BookCard newBookCard = new BookCard( title,  author,  bookCode,  category,  description);
+            MockDataBase.listOfBookCard.put(bookCode, newBookCard);
+            return newBookCard;
+        }catch (Exception e) {
+            System.out.println("An error occured while trying to create book card");
+            e.printStackTrace();
+        }
+        return null;
     }
 
 
@@ -39,16 +45,23 @@ public class LibraryHelperMethods {
      */
     public static List<Book> addBook(BookCard bookCard, int quantity, String edition){
         List<Book> books = new ArrayList<>();
-        long bookId;
-        long ID_OF_LAST_BOOK_ADDED = bookCard.getID_OF_LAST_BOOK_ADDED();
-        for (int i = 0; i < quantity; i++) {
-            bookId = ++ID_OF_LAST_BOOK_ADDED;
-            books.add(new Book(bookCard.getTitle(), bookCard.getAuthor(), bookCard.getBookCode(), bookId, edition));
+        try{
+
+            long bookId;
+            long ID_OF_LAST_BOOK_ADDED = bookCard.getID_OF_LAST_BOOK_ADDED();
+            for (int i = 0; i < quantity; i++) {
+                bookId = ++ID_OF_LAST_BOOK_ADDED;
+                books.add(new Book(bookCard.getTitle(), bookCard.getAuthor(), bookCard.getBookCode(), bookId, edition));
+            }
+            bookCard.setID_OF_LAST_BOOK_ADDED(ID_OF_LAST_BOOK_ADDED);
+            bookCard.setTotalQuantity(bookCard.getTotalQuantity() + quantity);
+            bookCard.setAvailableQuantityInShelf(bookCard.getAvailableQuantityInShelf() + quantity);
+            MockDataBase.listOfBooks.addAll(books);
+            return books;
+        }catch (Exception e){
+            System.out.println("An error occured while trying to add books");
+            e.printStackTrace();
         }
-        bookCard.setID_OF_LAST_BOOK_ADDED(ID_OF_LAST_BOOK_ADDED);
-        bookCard.setTotalQuantity(bookCard.getTotalQuantity() + quantity);
-        bookCard.setAvailableQuantityInShelf(bookCard.getAvailableQuantityInShelf() + quantity);
-        MockDataBase.listOfBooks.addAll(books);
         return books;
     }
 
