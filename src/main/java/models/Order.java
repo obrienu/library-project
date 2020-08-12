@@ -7,6 +7,11 @@ public class Order {
     public Order() {
     }
 
+    /**
+     *
+     * @param user
+     * @param bookCode
+     */
     public Order(User user, String bookCode) {
         this.user = user;
         this.bookCode = bookCode;

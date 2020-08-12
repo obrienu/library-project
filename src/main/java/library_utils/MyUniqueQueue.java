@@ -9,6 +9,7 @@ public class MyUniqueQueue {
     List<Order> list = new ArrayList<>();
 
     public boolean add(Order order){
+        //prevents duplicate entry
         if(list.contains(order)){
             return false;
         }

@@ -8,8 +8,11 @@ import java.util.List;
 public class MyPriorityList {
     private List<Order> list = new ArrayList<>();
 
+    //Adds an order to the list based on the priority of the user and if the books
+    //are similar while also maintaining the FIFO principle when necessary
     public boolean add(Order order){
 
+        //prevents duplicate entry
         if(list.contains(order)){
             return false;
         }

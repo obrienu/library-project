@@ -6,6 +6,16 @@ public class Liberian extends Person {
     public Liberian() {
     }
 
+    /**
+     *
+     * @param firstName
+     * @param lastName
+     * @param address
+     * @param dateOfBirth
+     * @param sex
+     * @param staffId
+     * @throws Exception
+     */
     //Throws Exception form the person superclass constructor;
     public Liberian(String firstName, String lastName, String address, String dateOfBirth, String sex, long staffId) throws Exception {
         super(firstName, lastName, address, dateOfBirth, sex);

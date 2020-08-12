@@ -16,6 +16,15 @@ abstract public class Person {
     public Person() {
     }
 
+    /**
+     *
+     * @param firstName
+     * @param lastName
+     * @param address
+     * @param dateOfBirth
+     * @param sex can either be male, female, m or f. where m = male and f= female
+     * @throws Exception for invalid gender input
+     */
     public Person(String firstName, String lastName, String address, String dateOfBirth, String sex) throws Exception {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,7 +39,7 @@ abstract public class Person {
             throw new Exception("Invalid sex entry");
         }
 
-        //Sets the Persons age of the date of birth;
+        //Sets the Persons age off the date of birth;
         LocalDate curDate = LocalDate.now();
         this.age = Period.between(this.dateOfBirth, curDate).getYears();
     }
@@ -63,6 +72,7 @@ abstract public class Person {
         return dateOfBirth.toString();
     }
 
+    //Sets the Persons age off the date of birth;
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = LocalDate.parse(dateOfBirth);
         LocalDate curDate = LocalDate.now();
@@ -73,6 +83,11 @@ abstract public class Person {
         return String.valueOf(sex);
     }
 
+    /**
+     *
+     * @param sex can either be male, female, m or f. where m = male and f= female
+     * @throws Exception for invalid gender entry
+     */
     public void setSex(String sex) throws Exception {
         if("male".equals(sex.toLowerCase().trim()) || "m".equals(sex.toLowerCase().trim())){
             this.sex = UsersSex.MALE;
@@ -82,6 +97,7 @@ abstract public class Person {
             throw new Exception("Invalid Sex Entry");
         }
     }
+
 
     public int getAge() {
         return age;

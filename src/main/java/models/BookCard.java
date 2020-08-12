@@ -24,6 +24,14 @@ public class BookCard {
 
     }
 
+    /**
+     *
+     * @param title
+     * @param author
+     * @param bookCode
+     * @param category
+     * @param description
+     */
     public BookCard(String title, String author, String bookCode, String category, String description) {
         this.title = title;
         this.author = author;

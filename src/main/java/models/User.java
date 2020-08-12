@@ -11,11 +11,21 @@ public class User extends Person{
 
     }
 
+    /**
+     *
+     * @param firstName
+     * @param lastName
+     * @param address
+     * @param dateOfBirth
+     * @param sex
+     * @param libraryId
+     * @param position position can either be "teacher", "junior_student", or "senior_student"
+     * @throws Exception for invalid position entry
+     */
     public User(String firstName, String lastName, String address, String dateOfBirth, String sex, long libraryId, String position) throws Exception {
         super(firstName, lastName, address, dateOfBirth, sex);
         this.libraryId = libraryId;
 
-        //Throws an exception for invalid user selection
         if("teacher".equals(position.toLowerCase().trim())){
             this.position = UserPosition.TEACHER;
         }else if("senior_student".equals(position.toLowerCase().trim())){
@@ -43,7 +53,7 @@ public class User extends Person{
 
     /**
      * Sets the position of the user
-     * @param position
+     * @param position can either be "teacher", "junior_student", or "senior_student"
      * @throws Exception for invalid position entry
      */
     public void setPosition(String position) throws Exception {

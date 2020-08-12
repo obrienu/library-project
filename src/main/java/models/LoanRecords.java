@@ -14,6 +14,12 @@ public class LoanRecords {
     public LoanRecords() {
     }
 
+    /**
+     *
+     * @param libraryId
+     * @param bookCode
+     * @param bookId
+     */
     public LoanRecords(long libraryId, String bookCode, long bookId) {
          this.libraryId = libraryId;
         this.bookCode = bookCode;
